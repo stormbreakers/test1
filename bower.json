@@ -1,0 +1,17 @@
+{
+  "name": "test1",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "DroidDevelop <ixltech.satish@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
