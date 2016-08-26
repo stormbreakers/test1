@@ -5,7 +5,10 @@ var BUILD_DIR = path.resolve(__dirname,'src/client/public');
 var APP_DIR = path.resolve(__dirname,'src/client/app');
 
 var config = {
-    entry: APP_DIR + '/js/index.jsx',
+    entry: [
+        'whatwg-fetch',
+        APP_DIR + '/js/index.jsx'
+    ],
     output: {
         path: BUILD_DIR+'/js/',
         filename: 'bundle.js'
