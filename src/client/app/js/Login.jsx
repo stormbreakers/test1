@@ -10,7 +10,6 @@ class Login extends React.Component {
             password:''
         };
         this.onHandleLogin = this.onHandleLogin.bind(this);
-        this.setValue = this.setValue.bind(this);
     }
 
     onHandleLogin(e){
@@ -22,13 +21,10 @@ class Login extends React.Component {
         console.log('Password:- '+ password);
     }
 
-    setValue(e){
-        console.log(e);
-        // console.log(type);
-        // let object = {};
-        // object[type] = e.target.value;
-        // console.log(this);
-        // this.setState(object);
+    setValue(type,e){
+        let object = {};
+        object[type] = e.target.value;
+        this.setState(object);
     }
 
     render() {
@@ -36,8 +32,8 @@ class Login extends React.Component {
             <div className="wrapper">
                 <form className="form-signin" onSubmit={this.onHandleLogin} method="post">
                     <h2 className="form-signin-heading">Please login</h2>
-                    <input type="text" className="form-control" name="username" placeholder="Email Address" onChange={this.setValue} required="" value={this.state.email}  />
-                    <input type="password" className="form-control" name="password" placeholder="Password" required="" value={this.state.password}/>
+                    <input type="text" className="form-control" name="username" placeholder="Email Address" onChange={this.setValue.bind(this,'email')} required="" value={this.state.email}  />
+                    <input type="password" className="form-control" name="password" placeholder="Password" onChange={this.setValue.bind(this,'password')} required="" value={this.state.password}/>
                     <label className="checkbox">
                         <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"/> Remember me
                     </label>
